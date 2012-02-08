@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block entries %}
+    {% for entry in entries %}
+            <div id="entry">
+                <h3><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h3>
+                <h5>{{ entry.author}}, {{ entry.time_published|date:"f A, Y-n-j l" }}</h5>
+                <div id="entry_content">
+                    {{ entry.content|linebreaks }}
+                </div>
+            </div>
+    {% endfor %}
+{% endblock %}
+
+{% block nav_prev %}
+    {% if has_prev %}
+    <a href="{{ prev_entry.get_absolute_url }}">« {{ prev_entry.title }}</a>
+    {% endif %}
+{% endblock %}
+
+
+{% block nav_next %}
+    {% if has_next %}
+        <a href="{{ next_entry.get_absolute_url }}">{{ next_entry.title }} »</a>
+    {% endif %}
+{% endblock %}
