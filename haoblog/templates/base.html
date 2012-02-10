@@ -1,65 +1,96 @@
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head><title>{{ title }}</title>
       <style type="text/css">
 
       body {
-        margin: 30px;
+        margin: 0;
         font-family: Monaco;
         background: #f5f5d5;
       }
 
-      h1 {
-        background: #ccf;
-        padding: 20px;
+      #logo {
+        font-size: 30px;
+        padding-left: 40px;
+        padding-top: 10px;
       }
+      #logo a {
+        text-decoration: none;
+      }
+      
+
+      <!-- header menu -->  
+      #menu ul {
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      #menu a {
+        float: left;
+        width: 5em;
+        text-decoration: none;
+        color: white;
+        background-color: purple;
+        padding: 0.2em 0.6em;
+        border-right: 1px solid white;
+      }
+      #menu a:hover { background-color: yellow; color: purple; }
+      #menu li { display: inline; }
 
       #topnav {
-        background: #ccf;
+        background: #d5d6d7;
         width: 100%;
-        height: 100px;
+        height: 110px;
       }
 
-      #header, #main, #footer {
+      #header, #wrapper, #container, #footer {
         margin: 0 auto;
-        width: 940px;
+        width: 980px;
       }
-      
-      #header .menu_item {
-        float: left;
-        position: relative;
+      #footer {
+        background-color: #d5d6d7;
+        margin: 10px 0 20px 0;
+        width: 780px;
+        padding: 5px 0 5px 5px;
       }
-      
-      #header a {
-        color: #AAA;
-        display: block;
-        line-height: 38px;
-        padding-right: 15px;
+      #footer a {
         text-decoration: none;
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 18px;
       }
       
-      #wrapper {
-        margin: 0 auto;
-        width: 940px;
-      }
       #container {
-        float: left;
-        margin: 0 -320px 0 0;
-        width: 100%;
-      }
-
-      #main {
         clear: both;
         overflow: hidden;
       }
       
       #content {
-        margin: 0 240px 0 0;
-        margin-bottom: 40px;
+        float: left;
+        margin-bottom: 1px;
         font-size: 14px;
+        width: 780px;
       }
+
+      #aside {
+        float: right;
+        overflow: hidden;
+        width: 200px;
+      }
+      
+      #container #aside ul {
+        list-style: none;
+        margin-left: 8px;
+        padding: 0 0 5px 0;
+      }
+      
+      .side_name {
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      
 
       .page_nav {
         display: block;
@@ -69,21 +100,13 @@
       
       .page_nav #previous {
         float: left;
-        width: auto%;
+        width: auto;
       }
       
       .page_nav #next {
         float: right;
         text-align: right;
         width: auto;
-      }
-      
-      #header {
-        background: #ccc;
-      }
-
-      #footer {
-        background: #ccc;
       }
   
       #entry {
@@ -96,11 +119,77 @@
         position: relative;
         border-image: initial;
       }
-
-      #aside {
-        float: right;
-        overflow: hidden;
-        width: 220px;
+      
+      #entry h3 a{
+        text-decoration: none;
+        font-size: 24px;
+      }
+      
+      #comments {
+        background-color: #ddd;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 20px;
+        padding: 20px 25px;
+        position: relative;
+        border-image: initial;
+      }
+      
+      #add-comment {
+        background-color: #ddd;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 10px;
+        padding: 20px 25px;
+        position: relative;
+        border-image: initial;
+      }
+      
+      ul.comment-list {
+        list-style: none;
+        margin: 0;
+      }
+      
+      ul.add-comment-form {
+        list-style: none;
+        margin: 0;
+      }
+      
+      .comment-list li.comment-item {
+        border-bottom: 1px solid #E7E7E7;
+        line-height: 24px;
+        margin: 0 0 2px 0;
+        padding: 0 0 0 0;
+        position: relative;
+      }
+      
+      
+      .comment-list .author-name {
+        margin: 0 5px 0 5px;
+        left: 10px;
+        top: 5px;
+      }
+      
+      .comment-meta {
+        margin: auto; 
+      }
+      
+      .comment-content {
+        background-color: #efefef;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 10px;
+        padding: 2px 0 2px 20px;
+        position: relative;
+        border-image: initial;  
+      }
+      
+      input[type="text"] {
+        margin-bottom:10px;
+        background-color:yellow;
       }
 
     </style>
@@ -109,10 +198,13 @@
   <body>
     <div id="topnav">
       <div id="header">
+        <div id="logo">
         <a title="logo" href="http://haolloyin.blog.51cto.com/">
-          <img src="http://tp2.sinaimg.cn/1748699617/50/5603424413/1">
+          haoblog
         </a>
+        </div>
         
+        <div id="menu">
         <ul>
           <li class="menu_item">
             <a href="" title="">首页</a>
@@ -127,7 +219,7 @@
             <a href="" title="">other</a>
           </li>
         </ul>
-        
+        </div>
       </div>
     </div>
 
@@ -138,8 +230,7 @@
           <div id="content">
             {% block entries %}
             {% endblock %}
-            
-            
+                       
             <div class="page_nav">
                 <div id="previous">
                     {% block nav_prev %}
@@ -151,17 +242,20 @@
                 </div>
             </div>
           <!-- .page_nav -->
+            
+            {% block entry_comments %}
+            {% endblock %}
+            
+            {% block add_comment %}
+            {% endblock %}
+          
           </div>
           <!-- #content -->
           
-          
-        </div>
-        <!-- #container -->
-        
         <div id="aside">
           <ul class="sidebar">
             <li>
-              <h3>分类目录</h3>
+              <h3 class="side_name">分类目录</h3>
               <div id="categories">
                 {% block categories %}
                 {% endblock %}
@@ -169,7 +263,7 @@
             </li>
 
             <li>
-              <h3>标签</h3>
+              <h3 class="side_name">标签</h3>
               <div id="tags">
                 {% block tags %}
                 {% endblock %}
@@ -177,8 +271,9 @@
             </li>
           </ul>
         </div>
-
         <!-- #aside -->
+        </div>
+        <!-- #container -->
       </div>
       <!-- #main -->
       

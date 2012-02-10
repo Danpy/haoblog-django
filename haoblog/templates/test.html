@@ -1,91 +1,110 @@
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head><title>title</title>
+  <head><title>漫话中文分词算法 - haoblog</title>
       <style type="text/css">
+
       body {
-        margin: 30px;
+        margin: 0;
         font-family: Monaco;
         background: #f5f5d5;
       }
 
-      h1 {
-        background: #ccf;
-        padding: 20px;
+      #logo {
+        font-size: 30px;
+        padding-left: 40px;
+        padding-top: 10px;
       }
+
+      <!-- header menu -->  
+      #menu ul {
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      #menu a {
+        float: left;
+        width: 5em;
+        text-decoration: none;
+        color: white;
+        background-color: purple;
+        padding: 0.2em 0.6em;
+        border-right: 1px solid white;
+      }
+      #menu a:hover { background-color: yellow; color: purple; }
+      #menu li { display: inline; }
 
       #topnav {
-        background: #ccf;
+        background: #d5d6d7;
         width: 100%;
-        height: 100px;
+        height: 110px;
       }
 
-      #header, #main, #footer {
+      #header, #wrapper, #container, #footer {
         margin: 0 auto;
-        width: 940px;
+        width: 980px;
       }
       
-      #header .menu_item {
-        float: left;
-        position: relative;
-      }
-      
-      #header a {
-        color: #AAA;
-        display: block;
-        line-height: 38px;
-        padding-right: 15px;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bold;
-      }
-      
-      #wrapper {
-        margin: 0 auto;
-        width: 940px;
-      }
       #container {
-        float: left;
-        margin: 0 -320px 0 0;
-        width: 100%;
-      }
-
-      #main {
         clear: both;
         overflow: hidden;
       }
       
-      #content {
-        margin: 0 240px 0 0;
-        margin-bottom: 40px;
-        font-size: 14px;
+      #footer {
+        background-color: #d5d6d7;
+        margin: 10px 0 20px 0;
+        width: 780px;
+        padding: 5px 0 5px 5px;
       }
       
+      #content {
+        float: left;
+        margin-bottom: 2px;
+        font-size: 14px;
+        width: 780px;
+      }
+
+      #aside {
+        float: right;
+        overflow: hidden;
+        width: 200px;
+      }
+      
+      #container #aside ul {
+        list-style: none;
+        margin-left: 8px;
+        padding: 0 0 5px 0;
+      }
+      
+      .side_name {
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      
+
       .page_nav {
         display: block;
-        margin: 0 0 50px 0;
+        margin: 0 0 60px 0;
+        font-size: 12px;
       }
       
       .page_nav #previous {
         float: left;
-        width: 50%;
+        width: auto;
       }
       
       .page_nav #next {
         float: right;
         text-align: right;
-        width: 50%;
-      }
-
-      #header {
-        background: #ccc;
-      }
-
-      #footer {
-        background: #ccc;
+        width: auto;
       }
   
       #entry {
-        background-color: #CCC;
+        background-color: #EFEFEF;
         border: 1px solid #B0B0B0;
         border-radius: 5px 5px 5px 5px;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
@@ -94,12 +113,76 @@
         position: relative;
         border-image: initial;
       }
-
       
-      #aside {
-        float: right;
-        overflow: hidden;
-        width: 220px;
+      #entry h3 a{
+        text-decoration: none;
+      }
+      
+      #comments {
+        background-color: #ddd;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 20px;
+        padding: 20px 25px;
+        position: relative;
+        border-image: initial;
+      }
+      
+      #add-comment {
+        background-color: #ddd;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 20px;
+        padding: 20px 25px;
+        position: relative;
+        border-image: initial;
+      }
+      
+      ul.comment-list {
+        list-style: none;
+        margin: 0;
+      }
+      
+      ul.add-comment-form {
+        list-style: none;
+        margin: 0;
+      }
+      
+      .comment-list li.comment-item {
+        border-bottom: 1px solid #E7E7E7;
+        line-height: 24px;
+        margin: 0 0 2px 0;
+        padding: 0 0 0 0;
+        position: relative;
+      }
+      
+      
+      .comment-list .author-name {
+        margin: 0 5px 0 5px;
+        left: 10px;
+        top: 5px;
+      }
+      
+      .comment-meta {
+        margin: auto; 
+      }
+      
+      .comment-content {
+        background-color: #efefef;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 10px;
+        padding: 2px 0 2px 20px;
+        position: relative;
+        border-image: initial;  
+      }
+      
+      input[type="text"] {
+        margin-bottom:10px;
+        background-color:yellow;
       }
 
     </style>
@@ -108,10 +191,13 @@
   <body>
     <div id="topnav">
       <div id="header">
+        <div id="logo">
         <a title="logo" href="http://haolloyin.blog.51cto.com/">
-          <img src="http://tp2.sinaimg.cn/1748699617/50/5603424413/1">
+          haoblog
         </a>
+        </div>
         
+        <div id="menu">
         <ul>
           <li class="menu_item">
             <a href="" title="">首页</a>
@@ -126,7 +212,7 @@
             <a href="" title="">other</a>
           </li>
         </ul>
-        
+        </div>
       </div>
     </div>
 
@@ -135,38 +221,201 @@
       <div id="main">
         <div id="container">
           <div id="content">
-            block content
-            <div id="entry">
-              this is an entry.
-            </div>
-            <div id="entry">
-              this is an entry.
-            </div>
             
+    
+            <div id="entry">
+                <h3><a href="/blog/my-book/">漫话中文分词算法</a></h3>
+                <h5>admin, 8:12 PM, 2012-2-6 Monday  4条评论</h5>
+                <div id="entry_content">
+                    <p>flkajsdlfjalsjdlfj会计师地方啦建设的龙卷风<br />法律涉及地方拉就是；的房间； a<br />阿斯的房价拉就是地方垃圾啊</p>
+
+<p>房价阿隆索的减肥垃圾；</p>
+
+<p>的房价阿隆索的减肥；拉接受的；了放假啊了；建设的法律界阿隆索的减肥啦就是</p>
+
+<p>弗拉建设的法律及阿桑德拉房价；啊建设的； </p>
+
+<p>饭店房间啊可怜的手机反抗了就</p>
+                </div>
+            </div>
+    
+
+                       
             <div class="page_nav">
                 <div id="previous">
-                    <a href="/">« Previous</a>
+                    
+    
+    <a href="/blog/test/">« 常用bash命令 - 在mac或者电脑上捣腾的一切 - 博客大巴</a>
+    
+
                 </div>
                 <div id="next">
-                    <a href="/">Next »</a>
+                    
+    
+        <a href="/blog/how-to-design-index/">how to design index? »</a>
+    
+
                 </div>
             </div>
           <!-- .page_nav -->
+            
+            
+<div id="comments">
+        <h3 id="comment-title">4条评论</h3>
+              
+              <ul class="comment-list">
+                
+                <li class="comment-item">
+                  <div id="comment-1">
+                    
+                    <div class="comment-meta"> 
+                      <div class="author-name">
+                        
+                                <a href="http://google.com"><strong>你的大名 :)</strong></a>
+                        
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                        3:38 PM, 2012-2-9 Thursday&nbsp;&nbsp;
+                        <a href="/blog/my-book/#comment-1">#1</a>
+                      </div>
+                    </div>
+                    
+                    <div class="comment-content">
+                        <p>add a comment</p>
+                    </div>
+                    
+                  </div>
+                </li>
+                
+                <li class="comment-item">
+                  <div id="comment-2">
+                    
+                    <div class="comment-meta"> 
+                      <div class="author-name">
+                        
+                                <a href="http://google.com"><strong>你的大名 :)</strong></a>
+                        
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                        3:39 PM, 2012-2-9 Thursday&nbsp;&nbsp;
+                        <a href="/blog/my-book/#comment-2">#2</a>
+                      </div>
+                    </div>
+                    
+                    <div class="comment-content">
+                        <p>add a comment</p>
+                    </div>
+                    
+                  </div>
+                </li>
+                
+                <li class="comment-item">
+                  <div id="comment-3">
+                    
+                    <div class="comment-meta"> 
+                      <div class="author-name">
+                        
+                                <a href="http://google.com"><strong>你的大名 :)</strong></a>
+                        
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                        3:53 PM, 2012-2-9 Thursday&nbsp;&nbsp;
+                        <a href="/blog/my-book/#comment-3">#3</a>
+                      </div>
+                    </div>
+                    
+                    <div class="comment-content">
+                        <p>add a comment</p>
+                    </div>
+                    
+                  </div>
+                </li>
+                
+                <li class="comment-item">
+                  <div id="comment-4">
+                    
+                    <div class="comment-meta"> 
+                      <div class="author-name">
+                        
+                                <a href="http://google.com"><strong>你的大名 :)</strong></a>
+                        
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                        4:35 PM, 2012-2-9 Thursday&nbsp;&nbsp;
+                        <a href="/blog/my-book/#comment-4">#4</a>
+                      </div>
+                    </div>
+                    
+                    <div class="comment-content">
+                        <p>add a comment</p>
+                    </div>
+                    
+                  </div>
+                </li>
+                
+              </ul>
+
+            
+            
+        <div id="add-comment">
+                <h3 id="add-title">添加新评论</h3>
+                <p>
+                <form action="/blog/comment/add/" method="POST"><div style='display:none;'><input type='hidden' id='csrfmiddlewaretoken' name='csrfmiddlewaretoken' value='26eba36f540456d37c9cf1d615211d40' /></div>
+                  <ul class="add-comment-form">
+                        <li><label for="id_author">ID:</label> <input id="id_author" type="text" name="author" value="你的大名 :)" maxlength="30" /> 默认为‘None’</li>
+<li><label for="id_email">Eamil:</label> <input name="email" value="haoglog.admin@gmail.com" maxlength="75" type="text" id="id_email" size="58" /> 请相信我不会公开:)</li>
+<li><label for="id_site_url">Site:</label> <input name="site_url" value="http://google.com" maxlength="100" type="text" id="id_site_url" size="60" /> blog/github/weblog</li>
+<li> <textarea id="id_content" rows="5" cols="60" name="content">add a comment</textarea><input type="hidden" name="entry_id" value="4" id="id_entry_id" /></li>
+                  </ul>
+                  <input type="submit" value="提交"></input>
+                </form>
+                </p>
+        </div>
+
+</div>
           </div>
           <!-- #content -->
-        </div>
-        <!-- #container -->
-        
+          
         <div id="aside">
-          block aside
-          <div id="">
-            this is an entry.
-          </div>
-          <div id="">
-            this is an entry.
-          </div>
+          <ul class="sidebar">
+            <li>
+              <h3 class="side_name">分类目录</h3>
+              <div id="categories">
+                
+    
+        <ul id="categories_list">
+            
+                <li><a href="/blog/category/Java/" title="Java目录下的所有文章">Java</a></li>
+            
+                <li><a href="/blog/category/Python/" title="Python目录下的所有文章">Python</a></li>
+            
+                <li><a href="/blog/category/Django/" title="Django目录下的所有文章">Django</a></li>
+            
+        </ul>
+    
+
+              </div>
+            </li>
+
+            <li>
+              <h3 class="side_name">标签</h3>
+              <div id="tags">
+                
+    
+        <ul id="tags_list">
+            
+                <li><a href="/blog/tag/Python/" title="Python标签的所有文章"> Python</a></li>
+            
+                <li><a href="/blog/tag/%E7%94%9F%E6%B4%BB/" title="生活标签的所有文章"> 生活</a></li>
+            
+                <li><a href="/blog/tag/IT%E4%B8%9A%E7%95%8C/" title="IT业界标签的所有文章"> IT业界</a></li>
+            
+                <li><a href="/blog/tag/%E5%BC%80%E6%BA%90/" title="开源标签的所有文章"> 开源</a></li>
+            
+        </ul>
+              </div>
+            </li>
+          </ul>
         </div>
         <!-- #aside -->
+        </div>
+        <!-- #container -->
       </div>
       <!-- #main -->
       
@@ -179,5 +428,6 @@
     <!-- #wrapper -->
   </body>
 </html>
+
 
 
