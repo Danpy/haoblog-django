@@ -3,10 +3,19 @@
 from django.contrib import admin
 from haoblog.blog.models import Entry, Tag, Category, Comment
 
+
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('title', 'time_published', 'author', '_url_title', 'id')
     ordering = ('-time_published',)
     search_fields = ('title',)
+
+    class Media:
+        js = (
+                # '/static_media/js/tiny_mce/tiny_mce.js',
+                # '/static_media/js/tiny_mce/textareas.js',
+                '/media/js/tiny_mce/tiny_mce.js',
+                '/media/js/tiny_mce/textareas.js',
+        )
 
 
 class CommentAdmin(admin.ModelAdmin):

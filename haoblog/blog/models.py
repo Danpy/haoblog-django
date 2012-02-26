@@ -16,6 +16,10 @@ class Tag(models.Model):
     #count = models.IntegerField(blank=True, null=True)
     name = models.CharField(max_length=20)
 
+    @property
+    def entry_count(self):
+        return Entry.objects.filter(tags=self.id).count()
+
     def __unicode__(self):
         return u'%s' % self.name
 
@@ -27,6 +31,10 @@ class Tag(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=20, unique=True)
+
+    @property
+    def entry_count(self):
+        return Entry.objects.filter(catalog=self.id).count()
 
     def __unicode__(self):
         return u'%s' % self.name
@@ -68,6 +76,16 @@ class Entry(models.Model):
     def total_comments(self):
         '''返回当前文章的所有评论'''
         return Comment.objects.filter(entry=self.id)
+
+    @property
+    def total_tags(self):
+        '''取得当前Entry的所有Tag'''
+        return self.tags.all()
+
+    @property
+    def total_categories(self):
+        '''取得当前Entry的所有Category'''
+        return self.catalog.all()
 
     class Meta:
         ordering = ('-time_published',)

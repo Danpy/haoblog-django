@@ -2,6 +2,7 @@
 
 from django import forms
 
+
 class CommentForm(forms.Form):
     author = forms.CharField(max_length=30, help_text='默认为‘None’', label='ID:', initial='你的大名 :)')
     email = forms.CharField(max_length=75, widget=forms.TextInput(attrs={'size': 58}), help_text='请相信我不会公开:)', label='Eamil:', initial='haoglog.admin@gmail.com')
@@ -17,3 +18,4 @@ class CommentForm(forms.Form):
                 self.entry_id,
                 self.content
         )
+
