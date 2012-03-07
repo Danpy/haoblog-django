@@ -20,12 +20,16 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 
     # Tiny-MCE 富文本编辑器js文件
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
+    #(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': MEDIA_ROOT}),
+    (r'^static_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': MEDIA_ROOT}),
 
     # blog 展示
     (r'^blog/', include('haoblog.blog.urls')),
 
-    # Dropbox用户OAuth认证
+
+    # Dropbox
     (r'^dropbox/', include('haoblog.dropboxapp.urls')),
 
+    # dropblog
+    (r'^dropblog/', include('haoblog.dropblog.urls')),
 )

@@ -79,6 +79,7 @@ def add_comment(request):
             new_comment.save()
             return entry_detail(request, cd['entry_id'])
     #return _render_with_info('entry_detail.html', info)
+
     raise Http404
 
 
@@ -136,6 +137,7 @@ def _render_with_info(template_name, extra_info={}):
             'tags': tags,
             'categories': categories,
             'user_widgets': userconfig.WIDGETS,
+            'blog_name': userconfig.blog_name,
     }
     info.update(extra_info)
     return render_to_response(template_name, info)

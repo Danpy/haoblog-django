@@ -63,7 +63,9 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '%s/media/' % current_path
+
+#MEDIA_ROOT = '%s/media/' % current_path
+MEDIA_ROOT = '%s/static_media/' % current_path
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -117,4 +119,6 @@ INSTALLED_APPS = (
     'haoblog.blog',
     #'haoblog.testmodel',
     'django.contrib.markup',
+    'haoblog.dropboxapp',
+    'haoblog.dropblog',
 )

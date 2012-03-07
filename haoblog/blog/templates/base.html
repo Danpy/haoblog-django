@@ -237,7 +237,7 @@
       <div id="header">
         <div id="logo">
         <a title="logo" href="http://haolloyin.blog.51cto.com/">
-          haoblog
+          {{ blog_name }}
         </a>
         </div>
         
@@ -255,6 +255,9 @@
           <li class="menu_item">
             <a href="http://127.0.0.1:8000/latest/feed/" title="">订阅</a>
           </li>
+          <li class="menu_item">
+            <a href="{% url oauth_start %}">Dropbox写blog</a>
+          </li>
         </ul>
         </div>
       </div>
@@ -265,6 +268,7 @@
       <div id="main">
         <div id="container">
           <div id="content">
+            
             {% block entries %}
             {% endblock %}
                        
