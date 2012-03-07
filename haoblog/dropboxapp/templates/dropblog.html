@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head><title></title>
+        <style type="text/css">
+            
+            body {
+                background: #f5f5d5;
+            }
+            
+            #header {
+                margin: 0 0 10px 0;
+                padding: 10px;
+                border: 1px dashed #000;
+                border-color: #000;
+                width: 980px;
+                margin: 10px auto;
+                background: #ddd;
+            }
+            #footer {
+                clear: both;
+                padding: 10px;
+                border: 1px dashed #000;
+                border-color: #000;
+                width: 980px;
+                margin: 10px auto;
+                background: #ddd;
+            }
+            #main {
+                background: #f5f5d5;
+                margin: 30px auto;
+                width: 980px;
+                padding: 10px;
+                background: #d5d6d7;
+            }
+            
+            .step {
+                margin: 10px;
+                height: 180px;
+            }
+            
+            #step-settings {
+                margin-left: 40%;
+                margin-right: 30%;
+                /*width: 25%;*/
+                padding: 10px;
+                border: 1px dashed #000;
+                border-color: #000
+            }
+            
+            #step-oauth {
+                float: left;
+                width: 35%;
+                padding: 10px;
+                border: 1px dashed #000;
+                border-color: #000
+            }
+            
+            #step-updates {
+                float: right;
+                width: 25%;
+                padding: 10px;
+                border: 1px dashed #000;
+                border-color: #000;
+            }
+        
+        </style>
+        
+        <script type="text/javascript" src="/static_media/js/dropblog/dropblog.js">
+        </script>
+    </head>
+    
+  <body>
+    <div id="header">
+        header
+    </div>
+    
+    <div id="main">
+        
+        <div class="step" id="step-oauth">
+            <div class="step-title">
+                授权
+            </div>
+            <div id="about-oauth">
+                <a href="">关于Dropbox授权</a>
+            </div>
+            <form name="oauth" action="" method="POST">
+                <input type="submit" value="授权">
+            </form>
+        </div>
+        
+        <div class="step" id="step-updates">
+            <div class="step-title">
+                授权
+            </div>
+            <p>发布你的第一篇blog吧 ;-)</p>
+            <form name="update" action="" method="POST">
+                <input type="hidden" name="uid" value="">
+                <input type="submit" name="update" value="发布">
+            </form>
+        </div>
+            
+        <div class="step" id="step-settings">
+            <div class="step-title">
+                授权
+            </div>
+            <form name="settings" action="" method="GET">
+            Blog name:<input type="text" name="blog_name" size="20" value=""
+                onBlur='checkIsValid(this.form, "blog_name");'></input><br>
+            <div id="check_blog_name">
+            </div>
+            
+            Site name:<input type="text" name="url_name" size="20" value=""
+                onBlur='checkIsValid(this.form, "url_name");'></input><br>
+            <div id="check_url_name">
+            </div>
+            <input type="button" value="保存设置" >
+            <div id="setting_tips">
+            </div>
+            </form>
+        </div>
+    
+    </div>
+    
+    <div id="footer">
+        footer
+    </div>
+    
+  </body>
+</html>
+

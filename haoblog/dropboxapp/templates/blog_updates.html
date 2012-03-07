@@ -1,0 +1,15 @@
+
+<html>
+    <head>
+        <title>用Dropbox发布新blog - haoblog</title>
+    </head>
+    
+    
+    <body>
+        <p>发布你的第一篇blog吧 ;-)</p>
+        <form action="{% url blog_updates %}" method="POST">
+            <input type="hidden" name="uid" value="{{ user.uid }}">
+            <input type="submit" name="update" value="发布">
+        </form>
+    </body>
+</html>

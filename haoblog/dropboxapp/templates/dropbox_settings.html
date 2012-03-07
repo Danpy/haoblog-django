@@ -1,0 +1,15 @@
+
+<html>
+    <head>
+        <title>blog 设置 - haoblog</title>
+    </head>
+    
+    
+    <body>
+        <form action="{% url dropbox_settings %}" method="POST">
+            blog个性化标题:<input type="text" name="blog_name" size="20" value=""><br>
+            个性化域名后缀:<input type="text" name="url_name" size="20" value=""><br>
+            <input type="submit" value="保存设置">
+        </form>
+    </body>
+</html>

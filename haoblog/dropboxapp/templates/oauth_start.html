@@ -1,0 +1,21 @@
+
+<html>
+    <head>
+        <title>Dropbox OAuth 授权 - haoblog</title>
+    </head>
+    
+    
+    <body>
+        <p>授权成功后haoblog将会对你的Dropbox有如下操作：</p>
+        <ul>
+            <li>在你的Dropbox根目录新建一个新目录“haoblog”，即“/Apps/haoblog/”</li>
+            <li>haoblog将会在你手动操作时读取“haoblog”目录下的.md文件生成blog文章</li>
+            <li>haoblog将会在你手动操作时在“haoblog”目录下生成新的目录或文件（用于备份）</li>
+            <li style="color: red;">授权成功后haoblog并不能读取Dropbox帐号除“haoblog”以外的其他目录和文件<br>
+                Dropbox官方说明：<a href src="https://www.dropbox.com/developers/start/core">https://www.dropbox.com/developers/start/core</a></li>
+        </ul>
+        <form action="{% url dropbox_oauth %}" method="POST">
+            <input type="submit" value="授权">
+        </form>
+    </body>
+</html>
