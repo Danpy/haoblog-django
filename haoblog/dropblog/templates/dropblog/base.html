@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head><title>{{ title }}</title>
+      <style type="text/css">
+
+      body {
+        margin: 0;
+        font-family: Monaco;
+        background: #f5f5d5;
+      }
+
+      #logo {
+        font-size: 30px;
+        padding-left: 40px;
+        padding-top: 10px;
+      }
+      #logo a, .entry-info a {
+        text-decoration: none;
+      }
+      
+
+      <!-- header menu -->  
+      #menu ul {
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      #menu a {
+        float: left;
+        width: auto;
+        text-decoration: none;
+        color: white;
+        background-color: purple;
+        padding: 0.2em 0.6em;
+        border-right: 1px solid #f5f5d5;
+      }
+      #menu a:hover { background-color: yellow; color: purple; }
+      #menu li { display: inline; }
+      .entry-info a:hover { background-color: purple; color: yellow; }
+      #categories a, #tags a {
+        width: auto;
+        text-decoration: none;
+        color: white;
+        background-color: purple;
+        border-bottom: 1px solid white;
+        padding: 1px;
+      }
+      #categories a:hover, #tags a:hover { background-color: yellow; color: purple;}
+      #categories li, #tags li { border-bottom: 3px solid #f5f5d5; }
+
+      #topnav {
+        background: #d5d6d7;
+        width: 100%;
+        height: 110px;
+        margin-bottom: 1px;
+      }
+
+      #header, #wrapper, #container, #footer {
+        margin: 0 auto;
+        width: 980px;
+      }
+      #footer {
+        background-color: #d5d6d7;
+        margin: 10px 0 20px 0;
+        width: 760px;
+        padding: 5px 0 5px 5px;
+      }
+      #footer a {
+        text-decoration: none;
+        font-size: 18px;
+      }
+      
+      #container {
+        clear: both;
+        overflow: hidden;
+      }
+      
+      #content {
+        float: left;
+        margin-bottom: 1px;
+        margin-top: 16px;
+        font-size: 14px;
+        width: 760px;
+      }
+
+      #aside {
+        float: right;
+        overflow: hidden;
+        margin-left: 5px;
+        width: 204px;
+      }
+      
+      #container #aside ul {
+        list-style: none;
+        margin-left: 8px;
+        padding: 0 0 0 0;
+      }
+      
+      .side_name {
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      
+      .sidebar .item {
+        background-color: #EFEFEF;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 1px 0px 5px 0px;
+        padding: 1px 2px;
+        position: relative;
+        border-image: initial;
+      }
+
+      .page_nav {
+        display: block;
+        margin: 0 0 60px 0;
+        font-size: 12px;
+      }
+      
+      .page_nav #previous {
+        float: left;
+        width: auto;
+      }
+      
+      .page_nav #next {
+        float: right;
+        text-align: right;
+        width: auto;
+      }
+  
+      #entry {
+        background-color: #EFEFEF;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 20px;
+        padding: 20px 25px;
+        position: relative;
+        border-image: initial;
+      }
+      
+      #entry h3 a {
+        text-decoration: none;
+        font-size: 24px;
+      }
+      #entry-header h5 {
+        margin: -10px 0 25px 0px;
+        padding-bottom: 5px;
+        color: #999;
+        font-size: 12px;
+        border-bottom: 1px solid #ddd;
+      }
+      .entry-info h5 {
+        margin: 25px 0 0px 0px;
+        padding-top: 5px;
+        color: #999;
+        font-size: 12px;
+        border-top: 1px solid #ddd;
+      }
+      
+      #comments {
+        background-color: #ddd;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 20px;
+        padding: 20px 25px;
+        position: relative;
+        border-image: initial;
+      }
+      
+      #add-comment {
+        background-color: #ddd;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 10px;
+        padding: 20px 25px;
+        position: relative;
+        border-image: initial;
+      }
+      
+      ul.comment-list {
+        list-style: none;
+        margin: 0;
+      }
+      
+      ul.add-comment-form {
+        list-style: none;
+        margin: 0;
+      }
+      
+      .comment-list li.comment-item {
+        border-bottom: 1px solid #E7E7E7;
+        line-height: 24px;
+        margin: 0 0 2px 0;
+        padding: 0 0 0 0;
+        position: relative;
+      }
+      
+      .comment-list .author-name {
+        margin: 0 5px 0 5px;
+        left: 10px;
+        top: 5px;
+      }
+      
+      .comment-meta {
+        margin: auto; 
+      }
+      
+      .comment-content {
+        background-color: #efefef;
+        border: 1px solid #B0B0B0;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        margin: 0 0 10px;
+        padding: 2px 0 2px 20px;
+        position: relative;
+        border-image: initial;  
+      }
+      
+      input[type="text"] {
+        margin-bottom:10px;
+        background-color:yellow;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <div id="topnav">
+      <div id="header">
+        <div id="logo">
+        <a title="logo" href="http://haolloyin.blog.51cto.com/">
+          {{ blog_name }}
+        </a>
+        </div>
+        
+        <div id="menu">
+        <ul>
+          <li class="menu_item">
+            <a href="http://127.0.0.1:8000/blog" title="">首页</a>
+          </li>
+          <li class="menu_item">
+            <a href="http://127.0.0.1:8000/blog" title="">所有文章</a>
+          </li>
+          <li class="menu_item">
+            <a href="" title="">关于</a>
+          </li>
+          <li class="menu_item">
+            <a href="http://127.0.0.1:8000/latest/feed/" title="">订阅</a>
+          </li>
+          <li class="menu_item">
+            <a href="{% url oauth_start %}">Dropbox写blog</a>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrapper">
+
+      <div id="main">
+        <div id="container">
+          <div id="content">
+
+            {% block tips %}
+            {% endblock %}
+            
+
+            {% block entries %}
+            {% endblock %}
+                       
+            <div class="page_nav">
+                <div id="previous">
+                    {% block nav_prev %}
+                    {% endblock %}
+                </div>
+                <div id="next">
+                    {% block nav_next %}
+                    {% endblock %}
+                </div>
+            </div>
+          <!-- .page_nav -->
+            
+            {% block entry_comments %}
+            {% endblock %}
+            
+            {% block add_comment %}
+            {% endblock %}
+          
+          </div>
+          <!-- #content -->
+          
+        <div id="aside">
+          <ul class="sidebar">
+ 
+            <li class="item">
+              <h3 class="side_name">分类目录</h3>
+              <div id="categories">
+                {% block categories %}
+                {% endblock %}
+              </div>
+            </li>
+
+            <li class="item">
+              <h3 class="side_name">标签</h3>
+              <div id="tags">
+                {% block tags %}
+                {% endblock %}
+              </div>
+            </li>
+            
+            {% if user_widgets %}
+              {% for widget in user_widgets %}
+                <li class="item">
+                  <h3 class="side_name">{{ widget|slice:"1:2"|first }}</h3>
+                  <div class="{{ widget|first }}">
+                    {{ widget|last|safe }}
+                  </div>
+                </li>
+              {% endfor %}
+            {% endif %}
+            
+          </ul>
+        </div>
+        <!-- #aside -->
+        </div>
+        <!-- #container -->
+      </div>
+      <!-- #main -->
+      
+      <div id="footer">
+        <a href="http://haolloyin.blog.51cto.com/" title="haoblog首页">首页</a>
+        <a href="http://haolloyin.blog.51cto.com/">关于</a>
+        <a href="http://127.0.0.1:8000/latest/feed/" title="">订阅</a>
+      </div>
+      
+    </div>
+    <!-- #wrapper -->
+  </body>
+</html>
+
+
+
